@@ -94,7 +94,7 @@ class Cart extends Model{
 			':dessessionid'=>$this->getdessessionid(),
 			':iduser'=>$this->getiduser(),
 			':deszipcode'=>$this->getdeszipcode(),
-			':vlfreigth'=>$this->getvlfreigth(),
+			':vlfreigth'=>$this->getvlfreight(),
 			':nrdays'=>$this->getnrdays()
 		]);
 
@@ -188,7 +188,7 @@ class Cart extends Model{
 
 			if ($totals['vlheight'] < 2) $totals['vlheight'] = 2;
 			if ($totals['vllength'] < 16) $totals['vllength'] = 16;
-			if ($totals['vlheight'] < 11) $totals['vlheight'] = 11;
+			if ($totals['vlwidth'] < 11) $totals['vlwidth'] = 11;
 
 
 			$qs = http_build_query([
@@ -209,7 +209,7 @@ class Cart extends Model{
 			]);
 
 			$xml = simplexml_load_file("http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx/CalcPrecoPrazo?".$qs);
- 
+
 			$result = $xml->Servicos->cServico;
 
 			if ($result->MsgErro != '') {
@@ -242,7 +242,7 @@ class Cart extends Model{
 
 	}
 
-	public static function setMsgErro($msg){
+	public static function setMsgError($msg){
 
 		$_SESSION[Cart::SESSION_ERROR] = $msg;
 	}
@@ -283,7 +283,7 @@ class Cart extends Model{
 		$totals = $this->getProductsTotals();
 
 		$this->setvlsubtotal($totals['vlprice']);
-		$this->setvltotals($totals['vlprice'] + $this->getvlfreight());
+		$this->setvltotal($totals['vlprice'] + $this->getvlfreight());
 	}
 
 }

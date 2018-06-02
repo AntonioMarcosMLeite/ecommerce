@@ -58,7 +58,7 @@
                                         </td>
 
                                         <td class="product-price">
-                                            <span class="amount">R$<?php echo formatPrice($value1["vlprice"]); ?></span> 
+                                            <span class="amount">R$&nbsp<?php echo formatPrice($value1["vlprice"]); ?></span> 
                                         </td>
 
                                         <td class="product-quantity">
@@ -70,7 +70,7 @@
                                         </td>
 
                                         <td class="product-subtotal">
-                                            <span class="amount">R$<?php echo formatPrice($value1["vltotal"]); ?></span> 
+                                            <span class="amount">R$&nbsp<?php echo formatPrice($value1["vltotal"]); ?></span> 
                                         </td>
                                     </tr>
                                    <?php } ?> 
@@ -99,18 +99,18 @@
                                         <tbody>
                                             <tr class="cart-subtotal">
                                                 <th>Subtotal</th>
-                                                <td><span class="amount">R$<?php echo formatPrice($cart["vlsubtotal"]); ?></span></td>
+                                                <td><span class="amount">R$&nbsp<?php echo formatPrice($cart["vlsubtotal"]); ?></span></td>
                                             </tr>
 
                                             <tr class="shipping">
                                                 <th>Frete</th>
-                                                <td>R$<?php echo formatPrice($cart["vlfreight"]); ?><?php if( $cart["nrdays"] > 0 ){ ?> <small>
+                                                <td>R$&nbsp<?php echo formatPrice($cart["vlfreight"]); ?><?php if( $cart["nrdays"] > 0 ){ ?> <small>
                                                 prazo de <?php echo htmlspecialchars( $cart["nrdays"], ENT_COMPAT, 'UTF-8', FALSE ); ?> dia(s)</small><?php } ?></td>
                                             </tr>
 
                                             <tr class="order-total">
                                                 <th>Total</th>
-                                                <td><strong><span class="amount">R$<?php echo formatPrice($cart["vltotal"]); ?></span></strong> </td>
+                                                <td><strong><span class="amount">R$&nbsp<?php echo formatPrice($cart["vltotal"]); ?></span></strong> </td>
                                             </tr>
                                         </tbody>
                                     </table>
