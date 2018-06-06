@@ -11,7 +11,7 @@ class User extends Model{
 	const SESSION = "User";
 	const SECRET = "HcodePhp7_Secret";
 	const ERROR = "UserError";
-	const ERROR_REGISTER = "UserErorRegister";
+	const ERROR_REGISTER = "UserErrorRegister";
 
 	public static function getFromSession() {
 
@@ -321,7 +321,7 @@ class User extends Model{
 
 	public static function clearErrorRegister(){
 
-		$_SESSION[User::ERROR_REGISTER] = NUL;
+		$_SESSION[User::ERROR_REGISTER] = NULL;
 
 	}
 
